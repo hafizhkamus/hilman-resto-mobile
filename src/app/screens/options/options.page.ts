@@ -1,3 +1,5 @@
+import { ViewWillEnter } from '@ionic/angular';
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
@@ -7,11 +9,20 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
   templateUrl: './options.page.html',
   styleUrls: ['./options.page.scss'],
 })
-export class OptionsPage implements OnInit {
+export class OptionsPage implements OnInit, ViewWillEnter {
+
+  role: any = null;
+  user = null;
 
   constructor(
-    private router: Router
-  ) { }
+    private router: Router,
+    private authService: AuthService
+  ) {
+  }
+  ionViewWillEnter(): void {
+    this.user =JSON.parse(localStorage.getItem('currentLogin'));
+    this.role = this.user.idRole;
+  }
 
   ngOnInit() {
   }
@@ -32,9 +43,13 @@ export class OptionsPage implements OnInit {
               cancelButtonColor: '#d33',
           }).then((result) => {
               if (result.value) {
-                  this.router.navigate(['/login']);
+                  this.logout();
               }
           });
         }
+
+  logout(){
+    this.authService.logout();
+  }
 
 }

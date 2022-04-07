@@ -1,3 +1,5 @@
+import { AuthService } from './../auth.service';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,8 +15,10 @@ import { OptionsPage } from './options.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    OptionsPageRoutingModule
+    OptionsPageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [OptionsPage]
+  declarations: [OptionsPage],
+  providers: [AuthService]
 })
 export class OptionsPageModule {}

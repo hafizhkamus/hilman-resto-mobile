@@ -18,12 +18,12 @@
     <!-- <app-input placeholder="Your Name"></app-input>
     <app-input placeholder="Email"></app-input>
     <app-input type="password" placeholder="Password"></app-input> -->
-    <ion-button expand="block" shape="round" routerLink="/home">Pesan</ion-button>
+    <ion-button expand="block" shape="round" routerLink="/home" *ngIf="role == 3" >Pesan</ion-button>
     <!-- <ion-button expand="block" shape="round">Terima Pesanan</ion-button> -->
-    <ion-button expand="block" shape="round" routerLink="/menu">Daftar Menu</ion-button>
-    <ion-button expand="block" shape="round" routerLink="/data-transaksi">Data Transaksi</ion-button>
-    <ion-button expand="block" shape="round" routerLink="/laporan">Leporan Keuangan</ion-button>
-    <ion-button expand="block" shape="round" routerLink="/akun-baru">User Baru</ion-button>
+    <ion-button expand="block" shape="round" routerLink="/menu" *ngIf="role == 4">Daftar Menu</ion-button>
+    <ion-button expand="block" shape="round" routerLink="/data-transaksi" *ngIf="role == 4">Data Transaksi</ion-button>
+    <ion-button expand="block" shape="round" routerLink="/laporan" *ngIf="role == 4 || role == 5">Leporan Keuangan</ion-button>
+    <ion-button expand="block" shape="round" routerLink="/akun-baru"*ngIf="role == 5">User Baru</ion-button>
   </form>
 
   <p>Kafe Kafean <br /></p>

@@ -1,6 +1,8 @@
+import { RegisterService } from './register.service';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,8 +15,11 @@ import { RegisterPage } from './register.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RegisterPageRoutingModule
+    RegisterPageRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  declarations: [RegisterPage]
+  declarations: [RegisterPage],
+  providers: [RegisterService]
 })
 export class RegisterPageModule {}

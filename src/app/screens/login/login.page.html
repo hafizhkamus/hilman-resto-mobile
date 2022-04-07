@@ -13,25 +13,27 @@
 
   <div class="wrapper">
     <ion-card class="form-wrapper">
-      <ion-card-content>
-        <ion-item>
-          <ion-icon name="person-outline"></ion-icon>
-          <ion-input type="text" placeholder="Username"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="lock-closed"></ion-icon>
-          <ion-input type="password" placeholder="Password"></ion-input>
-        </ion-item>
-        <ion-button expand="block"> Sign in </ion-button>
-      </ion-card-content>
+      <form [formGroup]="form">
+        <ion-card-content>
+          <ion-item>
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-input type="text" placeholder="Username" formControlName="username"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="lock-closed"></ion-icon>
+            <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-button expand="block" (click)="login()" > Sign in </ion-button>
+        </ion-card-content>
+      </form>
     </ion-card>
 
     <div class="line-text">
       <span class="lines"></span>
-      <span class="text">Or connect using</span>
+      <span class="text">Kafe Kafean</span>
     </div>
 
-    <ion-card class="social-wrapper">
+    <!-- <ion-card class="social-wrapper">
       <ion-card-content>
         <div class="socials">
           <ion-button class="btn-fb">
@@ -48,7 +50,7 @@
           </ion-button>
         </div>
       </ion-card-content>
-    </ion-card>
+    </ion-card> -->
   </div>
 </ion-content>
 
