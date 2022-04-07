@@ -1,0 +1,33 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button color="dark"  routerLink="/options">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <!-- <ion-buttons slot="end">
+    <ion-button routerLink="/login">Log Out</ion-button>
+  </ion-buttons> -->
+</ion-toolbar>
+
+<ion-content>
+<!-- HEADER -->
+
+<!-- SEARCHBAR -->
+<app-searchbar></app-searchbar>
+
+<!-- CATEGORY -->
+<!-- <div class="categories">
+  <app-category-item *ngFor="let item of categories" [item]="item"></app-category-item>
+</div> -->
+
+<!-- PRODUCTS -->
+<div class="pluss">
+  <ion-button color="success"  routerLink="/options">
+    <ion-icon name="add-outline"></ion-icon>
+    New Menu
+  </ion-button>
+</div>
+<div class="food-list">
+  <app-foot-edit-card *ngFor="let food of foods" [item]="food" (clicked)="goToDetailPage(food.id)"></app-foot-edit-card>
+</div>
+</ion-content>

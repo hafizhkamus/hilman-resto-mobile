@@ -22,12 +22,24 @@ const routes: Routes = [
     loadChildren: () => import('./screens/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'register',
+    path: 'akun-baru',
     loadChildren: () => import('./screens/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'options',
     loadChildren: () => import('./screens/options/options.module').then( m => m.OptionsPageModule)
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./screens/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'data-transaksi',
+    loadChildren: () => import('./screens/data-transaksi/data-transaksi.module').then( m => m.DataTransaksiPageModule)
+  },
+  {
+    path: 'laporan',
+    loadChildren: () => import('./screens/laporan/laporan.module').then( m => m.LaporanPageModule)
   },
 ];
 

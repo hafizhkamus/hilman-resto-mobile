@@ -24,13 +24,14 @@ ion-content {
     padding-right: 30px;
 
     ion-button {
-      margin-top: 35px;
+      margin-top: 15px;
       height: 48px;
       font-size: 18px;
       text-transform: initial;
       border-radius: 50px;
       box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.05);
       --box-shadow: none;
+      --background:#6b45bc;
     }
   }
 
@@ -39,4 +40,9 @@ ion-content {
     color: #b6b6b6;
     margin-top: 40px;
   }
+}
+
+.btn{
+  padding: 10px;
+  font-size: 20px;
 }

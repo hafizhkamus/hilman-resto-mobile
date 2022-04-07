@@ -39,12 +39,20 @@ ion-content {
     grid-gap: 1rem;
   }
 
-  .list-header {
-    font-weight: 700;
-    color: #515151;
-    font-size: 1.8rem;
+  .pluss{
+
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 1.6rem;
-    margin-top: 2.5rem;
+
+    .list-header {
+      font-weight: 700;
+      color: #515151;
+      font-size: 1.8rem;
+      margin-bottom: 1.6rem;
+      margin-top: 1rem;
+    }
+
   }
 
   .food-list {
