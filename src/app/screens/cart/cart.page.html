@@ -25,7 +25,7 @@
   <div class="total-amount" *ngIf="(cartItems$|async).length">
     Total: <span><sup>Rp</sup>{{totalAmount$|async|number:'1.2'}}</span>
   </div>
-  <app-button *ngIf="(cartItems$|async).length">
+  <app-button *ngIf="(cartItems$|async).length" (click)="save()" >
     SUBMIT
   </app-button>
 </ion-content>

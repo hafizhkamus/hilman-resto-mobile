@@ -1,0 +1,63 @@
+<ion-content>
+  <div id="header">
+    <div id="app-bar">
+      <!-- <div id="logo">
+        <img src="assets/logo.png" alt="" />
+      </div> -->
+      <div></div>
+    </div>
+
+    <h1>Form Pembayaran</h1>
+    <p>Data Uang Masuk</p>
+  </div>
+
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
+      <form [formGroup]="form">
+        <ion-card-content>
+          <label for="">
+            Uang Masuk
+          </label>
+          <ion-item>
+            <ion-icon name="cash-outline"></ion-icon>
+            <input type="text" class="currency" placeholder="Uang Masuk" formControlName="vMasuk" currencyMask [options]="{ prefix: 'Rp ', thousands: '.', decimal: ',',align: 'left' }">
+          </ion-item>
+          <label for=""  *ngIf="kembali == true" >
+            Uang Kembali
+          </label>
+          <ion-item *ngIf="kembali == true" >
+            <ion-icon name="cash-outline"></ion-icon>
+            <input type="text" class="currency" readonly placeholder="Uang Keluar" formControlName="vKeluar" currencyMask [options]="{ prefix: 'Rp ', thousands: '.', decimal: ',',align: 'left' }">
+          </ion-item>
+          <ion-button expand="block" (click)="process()" *ngIf="kembali == false">Process</ion-button>
+          <ion-button expand="block" (click)="save ()" *ngIf="kembali == true" >Confirm</ion-button>
+        </ion-card-content>
+      </form>
+    </ion-card>
+
+    <div class="line-text">
+      <span class="lines"></span>
+      <span class="text">Kafe Kafean</span>
+    </div>
+
+    <!-- <ion-card class="social-wrapper">
+      <ion-card-content>
+        <div class="socials">
+          <ion-button class="btn-fb">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+          <ion-button class="btn-tw">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </ion-button>
+          <ion-button class="btn-go">
+            <ion-icon name="logo-google"></ion-icon>
+          </ion-button>
+          <ion-button class="btn-ph">
+            <ion-icon name="call-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card> -->
+  </div>
+</ion-content>
+
