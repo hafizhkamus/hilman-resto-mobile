@@ -8,13 +8,6 @@ import { map } from 'rxjs/operators';
 })
 export class CartService {
   private items$ = new BehaviorSubject<CartItem[]>([
-    {
-      id: 1,
-      name: 'Sea Food',
-      price: 12,
-      image: 'assets/images/foods/seafood-dishes.png',
-      quantity: 1,
-    },
   ]);
 
   getCart() {

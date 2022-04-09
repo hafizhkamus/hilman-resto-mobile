@@ -21,6 +21,10 @@ export class MenuService {
     return this.http.get<any>(`${environment.baseUrl}/api/menu/findAll`, {observe : 'response'});
   }
 
+  public findMenuById(id){
+    return this.http.get<any>(`${environment.baseUrl}/api/menu/findById/${id}`, {observe : 'response'});
+  }
+
   public upload(file: File): Observable<HttpEvent<any>> {
     const formData: FormData = new FormData();
 

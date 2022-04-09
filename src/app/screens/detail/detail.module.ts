@@ -1,3 +1,5 @@
+import { MenuService } from './../new-menu/menu.service';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -18,7 +20,9 @@ import { ButtonModule } from 'src/app/components/button/button.module';
     DetailPageRoutingModule,
     BadgeModule,
     ButtonModule,
+    HttpClientModule
   ],
   declarations: [DetailPage],
+  providers: [MenuService]
 })
 export class DetailPageModule {}

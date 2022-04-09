@@ -1,3 +1,6 @@
+import { ViewWillEnter } from '@ionic/angular';
+import { MenuService } from './../new-menu/menu.service';
+import { Menu } from './../../models/menu';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/models/category.model';
@@ -9,11 +12,18 @@ import { FoodService } from 'src/app/services/food.service';
   templateUrl: './listing.page.html',
   styleUrls: ['./listing.page.scss'],
 })
-export class ListingPage implements OnInit {
+export class ListingPage implements OnInit, ViewWillEnter {
   categories: Category[] = [];
   foods: Food[] = [];
+  menu: Menu[] = [];
 
-  constructor(private foodService: FoodService, private router: Router) {}
+  constructor(private foodService: FoodService, private router: Router, private service: MenuService) {}
+
+  ionViewWillEnter(): void {
+    this.service.findMenu().subscribe(data=>{
+      this.menu = data.body;
+    });
+  }
 
   ngOnInit() {
     this.getCategories();
@@ -28,22 +38,22 @@ export class ListingPage implements OnInit {
         image: 'assets/images/icons/all.png',
         active: true,
       },
-      {
-        id: 2,
-        label: 'Burgers',
-        image: 'assets/images/icons/burger.png',
-        active: false,
-      },
+      // {
+      //   id: 2,
+      //   label: 'Burgers',
+      //   image: 'assets/images/icons/burger.png',
+      //   active: false,
+      // },
       {
         id: 3,
-        label: 'Dishes',
+        label: 'Makanan',
         image: 'assets/images/icons/dish.png',
         active: false,
       },
       {
         id: 4,
-        label: 'Sushi',
-        image: 'assets/images/icons/sushi.png',
+        label: 'Minuman',
+        image: 'assets/images/icons/icons8-beer-glass-50.png',
         active: false,
       },
     ];

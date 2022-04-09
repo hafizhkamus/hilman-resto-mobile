@@ -13,15 +13,15 @@
   </div>
 
   <!-- FOOD DETAIL CARD -->
-  <div class="card">
+  <div class="card" *ngIf="views == true" >
     <div class="image">
-      <ion-img [src]="food.image"></ion-img>
+      <ion-img src="/appservice/api/menu/file/{{food.file}}"></ion-img>
     </div>
 
     <div class="card-content">
       <div class="card-title">
-        <h1 class="ion-no-margin">{{food.title}}</h1>
-        <p class="ion-no-margin"><sup>$</sup> {{food.price | number: '1.2'}}</p>
+        <h1 class="ion-no-margin">{{food.namaNemu}}</h1>
+        <p class="ion-no-margin"><sup>Rp</sup> {{food.hargaSatuan | number: '1.2'}}</p>
       </div>
     </div>
 
@@ -32,7 +32,7 @@
 
     <div class="about">
       <h1>About</h1>
-      <p>{{food.description}}</p>
+      <p>{{food.deskripsi}}</p>
     </div>
 
     <app-button (click)="addItemToCart()">Add to Cart</app-button>

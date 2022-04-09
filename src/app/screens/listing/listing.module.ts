@@ -1,3 +1,5 @@
+import { MenuService } from './../new-menu/menu.service';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +22,9 @@ import { FoodCardModule } from 'src/app/components/food-card/food-card.module';
     SearchbarModule,
     CategoryItemModule,
     FoodCardModule,
+    HttpClientModule
   ],
   declarations: [ListingPage],
+  providers: [MenuService]
 })
 export class ListingPageModule {}
