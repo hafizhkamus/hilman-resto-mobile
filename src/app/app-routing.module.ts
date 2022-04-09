@@ -41,6 +41,14 @@ const routes: Routes = [
     path: 'laporan',
     loadChildren: () => import('./screens/laporan/laporan.module').then( m => m.LaporanPageModule)
   },
+  {
+    path: 'new-menu',
+    loadChildren: () => import('./screens/new-menu/new-menu.module').then( m => m.NewMenuPageModule)
+  },
+  {
+    path: 'new-menu/:id',
+    loadChildren: () => import('./screens/new-menu/new-menu.module').then( m => m.NewMenuPageModule)
+  }
 ];
 
 @NgModule({

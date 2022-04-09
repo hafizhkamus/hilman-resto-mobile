@@ -1,9 +1,9 @@
 <div class="card" (click)="clicked.emit()">
-  <ion-img [src]="item.image"></ion-img>
+  <ion-img src="/appservice/api/menu/file/{{item.file}}"></ion-img>
 
   <div class="card-content">
-    <h3 class="title">{{item.title}}</h3>
-    <h2 class="subtitle"><sup>$</sup>{{item.price|number:'1.2'}}</h2>
+    <h3 class="title">{{item.namaNemu}}</h3>
+    <h2 class="subtitle"><sup>Rp</sup>{{item.hargaSatuan | number:'1.2'}}</h2>
 
     <ion-buttons slot="start">
       <ion-button>

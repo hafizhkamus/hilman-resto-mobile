@@ -1,3 +1,5 @@
+import { MenuService } from './../new-menu/menu.service';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -21,7 +23,11 @@ import { FoodEditCardModule } from 'src/app/components/foot-edit-card/food-edit-
     SearchbarModule,
     CategoryItemModule,
     FoodEditCardModule,
+    HttpClientModule
   ],
-  declarations: [MenuPage]
+  declarations: [MenuPage],
+  providers: [
+    MenuService
+  ]
 })
 export class MenuPageModule {}

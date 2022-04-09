@@ -22,12 +22,12 @@
 
 <!-- PRODUCTS -->
 <div class="pluss">
-  <ion-button color="success"  routerLink="/options">
+  <ion-button color="success"  routerLink="/new-menu">
     <ion-icon name="add-outline"></ion-icon>
     New Menu
   </ion-button>
 </div>
 <div class="food-list">
-  <app-foot-edit-card *ngFor="let food of foods" [item]="food" (clicked)="goToDetailPage(food.id)"></app-foot-edit-card>
+  <app-foot-edit-card *ngFor="let food of menu" [item]="food" (clicked)="goToDetailPage(food.id)"></app-foot-edit-card>
 </div>
 </ion-content>
