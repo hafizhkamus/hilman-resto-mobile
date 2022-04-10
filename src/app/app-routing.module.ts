@@ -48,6 +48,10 @@ const routes: Routes = [
   {
     path: 'new-menu/:id',
     loadChildren: () => import('./screens/new-menu/new-menu.module').then( m => m.NewMenuPageModule)
+  },
+  {
+    path: 'struke',
+    loadChildren: () => import('./screens/struke/struke.module').then( m => m.StrukePageModule)
   }
 ];
 

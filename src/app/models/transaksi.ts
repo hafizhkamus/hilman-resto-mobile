@@ -3,6 +3,8 @@ export class DetailTransaksi{
   idTransaksi: any;
   idMenu: any;
   volume: any;
+  namaMenu: any;
+  hargaSatuan: any;
 }
 
 export class Transaksi{
@@ -15,4 +17,5 @@ export class Transaksi{
   daftarMenu: DetailTransaksi[];
   tanggal: any;
   dateToString: any;
+  namaPegawai: any;
 }

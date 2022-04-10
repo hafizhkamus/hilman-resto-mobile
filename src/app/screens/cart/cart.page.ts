@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { CartItem } from 'src/app/models/cart-item.model';
 import { CartService } from 'src/app/services/cart.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -135,7 +136,9 @@ export class Bayar implements ViewWillEnter{
     private navParams: NavParams,
     private formBuilder: FormBuilder,
     private toastCtrl: ToastController,
-    private service: TransaksiService
+    private service: TransaksiService,
+    private router: Router,
+    private cartService: CartService
   ){
     this.form = this.formBuilder.group({
       vMasuk: this.formBuilder.control(null, [Validators.required]),
@@ -180,6 +183,10 @@ export class Bayar implements ViewWillEnter{
     values.uangKeluar = this.form.get('vKeluar').value;
     this.service.newTransaksi(values).subscribe(response=> {
       this.presentToast('Transaksi Berhasil');
+      this.router.navigate(['/struke']);
+      for(let del of this.transaction.daftarMenu){
+        this.cartService.removeItem(del.idMenu);
+      }
     }, error=>{
       this.presentToast('Transaksi Gagal');
     });
