@@ -1,6 +1,7 @@
+import { DataTransaksiService } from './data-transaksi.service';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -17,9 +18,13 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule,
     DataTransaksiPageRoutingModule,
     HttpClientModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    ReactiveFormsModule
   ],
   declarations: [DataTransaksiPage],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [
+    DataTransaksiService
+  ]
 })
 export class DataTransaksiPageModule {}

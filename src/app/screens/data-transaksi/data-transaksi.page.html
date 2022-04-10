@@ -61,6 +61,26 @@
       [sortType]="'multi'"
       [headerHeight]="50"
       [footerHeight]="50">
+      <ngx-datatable-column name="No.Transaksi" prop="idTransaksi" [width]="45">
+        <ng-template let-value="value" let-expanded="expanded" ngx-datatable-cell-template style="font-size: 10px;">
+          {{ value }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Kasir" prop="namaPegawai" [width]="50">
+        <ng-template let-value="value" ngx-datatable-cell-template style="font-size: 10px;">
+          {{ value }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Nominal" prop="uangJumlah" [width]="50">
+        <ng-template let-value="value" ngx-datatable-cell-template style="font-size: 10px;">
+          {{ value|number:'1.2' }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Tanggal" prop="dateToString" [width]="50">
+        <ng-template let-value="value" ngx-datatable-cell-template style="font-size: 10px;">
+          {{ value }}
+        </ng-template>
+      </ngx-datatable-column>
     </ngx-datatable>
   </div>
 </ion-content>
