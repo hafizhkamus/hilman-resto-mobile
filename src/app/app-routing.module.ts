@@ -52,7 +52,11 @@ const routes: Routes = [
   {
     path: 'struke',
     loadChildren: () => import('./screens/struke/struke.module').then( m => m.StrukePageModule)
+  },  {
+    path: 'transaksi-berhasil',
+    loadChildren: () => import('./screens/transaksi-berhasil/transaksi-berhasil.module').then( m => m.TransaksiBerhasilPageModule)
   }
+
 ];
 
 @NgModule({

@@ -1,14 +1,14 @@
-<div class="card" (click)="clicked.emit()">
+<div class="card">
   <ion-img src="/appservice/api/menu/file/{{item.file}}"></ion-img>
 
   <div class="card-content">
     <h3 class="title">{{item.namaNemu}}</h3>
     <h2 class="subtitle"><sup>Rp</sup>{{item.hargaSatuan | number:'1.2'}}</h2>
 
-    <ion-buttons slot="start">
+    <!-- <ion-buttons slot="start">
       <ion-button>
         <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
       </ion-button>
-    </ion-buttons>
+    </ion-buttons> -->
   </div>
 </div>
