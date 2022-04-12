@@ -1,6 +1,6 @@
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button color="dark"  routerLink="/options">
+      <ion-button routerLink="/options">
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -13,16 +13,16 @@
   <!-- HEADER -->
 
   <!-- SEARCHBAR -->
-  <app-searchbar></app-searchbar>
+  <!-- <app-searchbar></app-searchbar> -->
 
   <!-- CATEGORY -->
-  <div class="categories">
+  <!-- <div class="categories">
     <app-category-item *ngFor="let item of categories" [item]="item"></app-category-item>
-  </div>
+  </div> -->
 
   <!-- PRODUCTS -->
   <h1 class="list-header">Menu</h1>
   <div class="food-list">
-    <app-food-card *ngFor="let food of menu" [item]="food" (clicked)="goToDetailPage(food.id)"></app-food-card>
+    <app-food-card *ngFor="let food of menu" [item]="food" (clicked)="addItemToCart(food)"></app-food-card>
   </div>
 </ion-content>

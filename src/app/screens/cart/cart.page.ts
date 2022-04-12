@@ -25,7 +25,10 @@ export class CartPage implements OnInit, ViewWillEnter {
   constructor(
     private cartService: CartService,
     private alertCtrl: AlertController,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    private toastCtrl: ToastController,
+    private service: TransaksiService,
+    private router: Router,
   ) {}
   ionViewWillEnter(): void {
     this.cartService.getCart().subscribe( data => {
@@ -111,9 +114,31 @@ export class CartPage implements OnInit, ViewWillEnter {
           transaksi.daftarMenu = item;
           console.log(transaksi.daftarMenu);
           transaksi.idPegawai = this.user.id;
-          this.presentProfileModal(transaksi);
+          transaksi.uangMasuk =  this.totalAmount;
+          transaksi.uangKeluar =  0;
+          this.service.newTransaksi(transaksi).subscribe(response=> {
+            this.presentToast('Transaksi Berhasil');
+            this.router.navigate(['/transaksi-berhasil']);
+            for(let del of transaksi.daftarMenu){
+              this.cartService.removeItem(del.idMenu);
+            }
+          }, error=>{
+            this.presentToast('Transaksi Gagal');
+          });
+          // this.presentProfileModal(transaksi);
         }
     });
+  }
+
+  async presentToast(message) {
+    const toast = await this.toastCtrl.create({
+      message: message,
+      mode: 'ios',
+      duration: 1000,
+      position: 'top',
+    });
+
+    toast.present();
   }
 
 }

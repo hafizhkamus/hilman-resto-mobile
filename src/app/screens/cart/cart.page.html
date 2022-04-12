@@ -2,7 +2,7 @@
   <h3 class="title" *ngIf="(cartItems$|async).length">{{(cartItems$|async).length}} towards at cart</h3>
 
   <!-- CART ITEMS -->
-  <ion-list lines="none">
+  <ion-list  class="list" lines="none">
     <ion-item-sliding *ngFor="let item of cartItems$|async">
       <ion-item>
         <app-cart-item [item]="item" (increase)="onIncrease(item)" (decrease)="onDecrease(item)"></app-cart-item>

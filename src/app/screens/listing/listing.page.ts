@@ -1,4 +1,4 @@
-import { ViewWillEnter } from '@ionic/angular';
+import { ToastController, ViewWillEnter } from '@ionic/angular';
 import { MenuService } from './../new-menu/menu.service';
 import { Menu } from './../../models/menu';
 import { Component, OnInit } from '@angular/core';
@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { Category } from 'src/app/models/category.model';
 import { Food } from 'src/app/models/food.model';
 import { FoodService } from 'src/app/services/food.service';
+import { CartItem } from 'src/app/models/cart-item.model';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-listing',
@@ -17,7 +19,9 @@ export class ListingPage implements OnInit, ViewWillEnter {
   foods: Food[] = [];
   menu: Menu[] = [];
 
-  constructor(private foodService: FoodService, private router: Router, private service: MenuService) {}
+  constructor(private foodService: FoodService, private router: Router, private service: MenuService,
+    private cartService: CartService,
+    private toastCtrl: ToastController,) {}
 
   ionViewWillEnter(): void {
     this.service.findMenu().subscribe(data=>{
@@ -61,5 +65,29 @@ export class ListingPage implements OnInit, ViewWillEnter {
 
   goToDetailPage(id: number) {
     this.router.navigate(['detail', id]);
+  }
+
+  addItemToCart(food) {
+    const cartitem: CartItem = {
+      id: food.id,
+      name: food.namaNemu,
+      price: food.hargaSatuan,
+      image: '/appservice/api/menu/file/'+ food.file,
+      quantity: 1,
+    };
+
+    this.cartService.addToCart(cartitem);
+    this.presentToast();
+  }
+
+  async presentToast() {
+    const toast = await this.toastCtrl.create({
+      message: 'Food added to the cart',
+      mode: 'ios',
+      duration: 1000,
+      position: 'top',
+    });
+
+    toast.present();
   }
 }
