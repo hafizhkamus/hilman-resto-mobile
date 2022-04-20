@@ -1,40 +1,84 @@
 <ion-content>
-  <div class="header">
-    <ion-buttons>
-      <ion-button routerLink="/home/listing">
-        <ion-icon slot="icon-only" color='light' name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons>
-      <ion-button>
-        <ion-icon slot="icon-only" color='light' name="d-heart"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="arrow-back" routerLink="/menu"></ion-icon>
+      <!--<div id="logo">
+        <img src="assets/logo.png" alt="" />
+      </div> -->
+      <div></div>
+    </div>
+
+    <h1>Edit Menu</h1>
   </div>
 
-  <!-- FOOD DETAIL CARD -->
-  <div class="card" *ngIf="views == true" >
-    <div class="image">
-      <ion-img src="/appservice/api/menu/file/{{food.file}}"></ion-img>
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
+      <!-- <form [formGroup]="form"> -->
+        <ion-card-content>
+          <form [formGroup]="form">
+            <ion-item>
+              <ion-icon name="cafe-outline"></ion-icon>
+              <ion-input type="text" placeholder="Nama Menu" formControlName="namaNemu"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="paper-plane-outline"></ion-icon>
+              <ion-select placeholder="Kategori Makanan" formControlName="idKategori">
+                <ion-select-option value="1">Makanan</ion-select-option>
+                <ion-select-option value="2">Minuman</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <label for="">
+              Harga Satuan
+            </label>
+            <ion-item>
+              <ion-icon name="cash-outline"></ion-icon>
+              <input class="currency" formControlName="hargaSatuan" currencyMask [options]="{ prefix: 'Rp ', thousands: '.', decimal: ',',align: 'left' }" type="text" placeholder="Harga Satuan">
+            </ion-item>
+            <ion-item>
+              <ion-icon name="bar-chart-outline"></ion-icon>
+              <ion-input type="number" placeholder="Stok" formControlName="vol"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-textarea placeholder="Deskripsi" formControlName="deskripsi"></ion-textarea>
+            </ion-item>
+            <label for="">
+              Gambar Menu
+            </label>
+            <ion-item>
+              <label for="" id="label-file" style="color: grey;">Select File</label>
+              <ion-input (change)="selectFile($event)" style="opacity: 0; position: absolute;" type="file" accept="image/*" id="label-file"></ion-input>
+            </ion-item>
+            <div class="button-group">
+              <ion-button expand="block" (click)="save()"  >Submit</ion-button>
+              <ion-button expand="block" (click)="delete()"  >Delete</ion-button>
+            </div>
+          </form>
+        </ion-card-content>
+      <!-- </form> -->
+    </ion-card>
+
+    <div class="line-text">
+      <span class="lines"></span>
+      <span class="text">Work Coffe</span>
     </div>
 
-    <div class="card-content">
-      <div class="card-title">
-        <h1 class="ion-no-margin">{{food.namaNemu}}</h1>
-        <p class="ion-no-margin"><sup>Rp</sup> {{food.hargaSatuan | number: '1.2'}}</p>
-      </div>
-    </div>
-
-    <div class="rates">
-      <app-badge icon="d-time-forward" text="30m"></app-badge>
-      <app-badge icon="star-outline" text="4.5"></app-badge>
-    </div>
-
-    <div class="about">
-      <h1>About</h1>
-      <p>{{food.deskripsi}}</p>
-    </div>
-
-    <app-button (click)="addItemToCart()">Add to Cart</app-button>
+    <!-- <ion-card class="social-wrapper">
+      <ion-card-content>
+        <div class="socials">
+          <ion-button class="btn-fb">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+          <ion-button class="btn-tw">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </ion-button>
+          <ion-button class="btn-go">
+            <ion-icon name="logo-google"></ion-icon>
+          </ion-button>
+          <ion-button class="btn-ph">
+            <ion-icon name="call-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card> -->
   </div>
 </ion-content>

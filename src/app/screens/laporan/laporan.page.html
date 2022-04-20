@@ -1,13 +1,82 @@
-<ion-header>
-  <ion-toolbar class="new-background-color">
-    <div class="header">
-      <ion-buttons>
-        <ion-button routerLink="/options">
-          <ion-icon slot="icon-only" color='light' name="arrow-back"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-      <ion-title color="light">Laporan Keuangan</ion-title>
+<ion-content>
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="arrow-back" routerLink="/options"></ion-icon>
+      <!--<div id="logo">
+        <img src="assets/logo.png" alt="" />
+      </div> -->
+      <div></div>
     </div>
-  </ion-toolbar>
-</ion-header>
 
+    <h1>Laporan Keuangan</h1>
+    <!-- <p>Mari mulai<br />Yu mulai buat akunmu</p> -->
+  </div>
+
+  <div class="wrapper">
+    <ion-card class="form-wrapper">
+      <form [formGroup]="form">
+        <ion-card-content>
+          <label for="">
+            Nama Kafe
+          </label>
+          <ion-item>
+            <ion-icon name="person"></ion-icon>
+            <ion-input type="text" placeholder="Full Name" readonly formControlName="namaKafe"></ion-input>
+          </ion-item>
+          <label for="">
+            Saldo Masuk
+          </label>
+          <ion-item>
+            <ion-icon name="cash-outline"></ion-icon>
+            <input class="currency" formControlName="jumlahSaldoTransaksi" readonly currencyMask [options]="{ prefix: 'Rp ', thousands: '.', decimal: ',',align: 'left' }" type="text" placeholder="Harga Satuan">
+          </ion-item>
+          <label for="">
+            Jumlah Transaksi
+          </label>
+          <ion-item>
+            <ion-icon name="person"></ion-icon>
+            <ion-input type="text" placeholder="Full Name" readonly formControlName="jumlahTransaksi" readonly></ion-input>
+          </ion-item>
+          <label for="">
+            Tahun Penjualan
+          </label>
+          <ion-item>
+            <ion-icon name="person"></ion-icon>
+            <ion-input type="text" placeholder="Full Name" readonly formControlName="tahunPenjualan" readonly></ion-input>
+          </ion-item>
+          <!-- <ion-item>
+            <ion-icon name="paper-plane-outline"></ion-icon>
+            <ion-select placeholder="Pilih Role" formControlName="idRole">
+              <ion-select-option *ngFor="let data of listRole" [value]="data.id">{{data.keterangan}}</ion-select-option>
+            </ion-select>
+          </ion-item> -->
+          <!-- <ion-button expand="block" (click)="save()" > Sign Up </ion-button> -->
+        </ion-card-content>
+      </form>
+    </ion-card>
+
+    <div class="line-text">
+      <span class="lines"></span>
+      <span class="text">Work Coffe</span>
+    </div>
+
+    <!-- <ion-card class="social-wrapper">
+      <ion-card-content>
+        <div class="socials">
+          <ion-button class="btn-fb">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+          <ion-button class="btn-tw">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </ion-button>
+          <ion-button class="btn-go">
+            <ion-icon name="logo-google"></ion-icon>
+          </ion-button>
+          <ion-button class="btn-ph">
+            <ion-icon name="call-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card> -->
+  </div>
+</ion-content>

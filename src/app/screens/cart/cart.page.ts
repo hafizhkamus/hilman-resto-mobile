@@ -118,7 +118,7 @@ export class CartPage implements OnInit, ViewWillEnter {
           transaksi.uangKeluar =  0;
           this.service.newTransaksi(transaksi).subscribe(response=> {
             this.presentToast('Transaksi Berhasil');
-            this.router.navigate(['/transaksi-berhasil']);
+            this.router.navigate(['/struk-transaksi']);
             for(let del of transaksi.daftarMenu){
               this.cartService.removeItem(del.idMenu);
             }

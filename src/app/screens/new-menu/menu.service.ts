@@ -17,6 +17,15 @@ export class MenuService {
     return this.http.post<any>(`${environment.baseUrl}/api/menu/save`, user, {observe : 'response'});
   }
 
+  public update(user: Menu){
+    return this.http.post<any>(`${environment.baseUrl}/api/menu/update`, user, {observe : 'response'});
+  }
+
+
+  public delete(user: Menu){
+    return this.http.post<any>(`${environment.baseUrl}/api/menu/delete`, user, {observe : 'response'});
+  }
+
   public findMenu(){
     return this.http.get<any>(`${environment.baseUrl}/api/menu/findAll`, {observe : 'response'});
   }

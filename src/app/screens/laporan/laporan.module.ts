@@ -1,6 +1,9 @@
+import { NgxCurrencyModule } from 'ngx-currency';
+import { LaporanService } from './laporan.service';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,8 +16,12 @@ import { LaporanPage } from './laporan.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    LaporanPageRoutingModule
+    LaporanPageRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgxCurrencyModule
   ],
-  declarations: [LaporanPage]
+  declarations: [LaporanPage],
+  providers : [LaporanService]
 })
 export class LaporanPageModule {}
