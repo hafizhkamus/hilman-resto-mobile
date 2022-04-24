@@ -1,13 +1,13 @@
 ion-content {
-  --background: #fadffa;
+  --background: #55d2ff;
 
   #header {
     height: 250px;
-    background: #ffa4f0;
+    background: #0093fb;
     border-radius: 0 0 20px 20px;
     display: flex;
     flex-direction: column;
-    color: #fff;
+    color: #002aff;
     padding: 20px;
 
     #app-bar {
@@ -38,7 +38,10 @@ ion-content {
     }
 
     h1 {
-      font-size: 19px;
+      font-weight: 600;
+      text-align: center;
+      font-size: 30px;
+      color: #fff;
       margin-bottom: 5px;
     }
     p {
@@ -59,7 +62,7 @@ ion-content {
       padding: 15px 10px;
 
       ion-item {
-        --background: #efefef;
+        --background: #afdded;
         --padding-start: 10px;
         --highlight-height: 0;
         --border-width: 0;
@@ -80,7 +83,7 @@ ion-content {
         .currency{
           margin-left: 10px;
           font-size: 14px;
-          background-color: #efefef;
+          background-color: #afdded;
           width: 100%;
           border: none;
         }

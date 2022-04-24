@@ -1,9 +1,9 @@
 ion-content {
-  --background: #fadffa;
+  --background: #55d2ff;
 
   #header {
     height: 250px;
-    background: #ffa4f0;
+    background: #55d2ff;
     border-radius: 0 0 20px 20px;
     display: flex;
     flex-direction: column;
@@ -59,7 +59,7 @@ ion-content {
       padding: 15px 10px;
 
       ion-item {
-        --background: #efefef;
+        --background: #afdded;
         --padding-start: 10px;
         --highlight-height: 0;
         --border-width: 0;
@@ -80,7 +80,7 @@ ion-content {
         .currency{
           margin-left: 10px;
           font-size: 14px;
-          background-color: #efefef;
+          background-color: #afdded;
           width: 100%;
           border: none;
         }

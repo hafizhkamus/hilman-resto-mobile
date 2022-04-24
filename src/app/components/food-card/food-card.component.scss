@@ -1,7 +1,7 @@
 .card {
   width: 100%;
   padding: 1.6rem 2rem;
-  background: #6b45bc;
+  background: #002aff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,19 +16,19 @@
       font-weight: 700;
       font-size: 1.1rem;
       margin-bottom: 0.2rem;
-      color: #1d1d1d;
+      color: #55d2ff;
     }
 
     .subtitle {
       font-size: 1.1rem;
       font-weight: 700;
-      color: #ffb800;
+      color: #fff;
       margin-top: 0;
 
       sup {
         font-size: 1rem;
         margin-right: 2px;
-        color: #ffb800;
+        color: #fff;
       }
     }
 
@@ -41,7 +41,7 @@
       ion-button {
         --background: white;
         font-weight: 700;
-        color: #ffb800;
+        color: rgb(0, 0, 0);
         width: 40px;
         height: 40px;
         --padding-start: 0;

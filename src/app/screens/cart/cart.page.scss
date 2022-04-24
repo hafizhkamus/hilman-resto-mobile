@@ -1,7 +1,7 @@
 ion-content {
   --padding-top: 1.6rem;
   --padding-end: 1.6rem;
-  --background: #fadffa;
+  --background: #55d2ff;
 
   .title {
     font-weight: 700;
@@ -21,23 +21,23 @@ ion-content {
   }
 
   ion-list{
-    --background: #fadffa;
+    --background: #55d2ff;
   }
 
   .list{
-    background: #fadffa;
+    background: #55d2ff;
   }
 
   ion-item-sliding {
     margin-bottom: 2rem;
     overflow: hidden;
-    --background: #fadffa;
+    --background: #55d2ff;
 
     ion-item {
       --padding-start: 0;
       --inner-padding-end: 0;
       border-radius: 25px;
-      --background: #fadffa;
+      --background: #55d2ff;
     }
 
     ion-item-options {
@@ -58,7 +58,7 @@ ion-content {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #6b45bc;
+    color: #002aff;
 
     ion-icon {
       font-size: 8rem;
